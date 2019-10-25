@@ -4,11 +4,6 @@ Fax Relay is a SMTP server which listens for inbound e-mails and converts them t
 
 All requests are logged and output as "faxrelay.log". A statistics script is included to generate JSON formatted output of daily usage statistics based on the log file.
 
-## Screenshots
-
-![Screenshot of script execution](docs/media/script_execution.png "Script execution")
-![Screenshot of Wireshark capture](docs/media/packet_capture.png "Wireshark packet capture")
-
 ## Installation
 
 **Method 1 - Run the Script**
@@ -17,19 +12,17 @@ All requests are logged and output as "faxrelay.log". A statistics script is inc
 **Method 2 - Create a Python Venv**
 1. Browse to the project folder.
 2. Create Python Virtual Environment [(venv)](https://docs.python.org/3/library/venv.html) and activate it.
-3. Install the package requirements by running `pip install -r requirements.txt`.
 4. Run the script!
 
 ```
 cd fax-relay
 python3 -m venv .
-pip install -r requirements.txt
 python faxrelay.py
 ```
 
 ## Usage
 
-The server listens on tcp/1025 by default to avoid needing to be ran as root. Once activated it listens for incoming messages, validates the sender and recepient domains, and then passes the message to the fax server.
+The server listens on tcp/1025 by default to avoid needing to be ran as root. Once activated it listens for incoming messages, validates the sender and recipient domains, and then passes the message to the fax server.
 
 ```
 user@demo ~ $ python3 faxrelay.py &
